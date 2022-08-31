@@ -11,10 +11,12 @@ print("Header: {}").format(r.headers['content-type'])
 
 print("Python: {}").format(len(r.data))
 
-s = pool.request('GET', '/ajax/services/search/web',
+r = pool.request('GET', '/ajax/services/search/web',
              fields={'q': 'php', 'v': '1.0'})
 
-print("PHP: {}").format(s.data)
+print("PHP: {}").format(r.data)
 
 print("Number Of Connections: {}").format(pool.num_connections)
+
+print("Number Of Requests: {}").format(pool.num_requests)
 
